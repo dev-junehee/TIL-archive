@@ -9,4 +9,4 @@ function solution(array) {
   return array.sort((a, b) => a - b)[Math.floor(array.length / 2)];
 }
 
-// sort() 메서드는 원본을 변경하므로 굳이 변수 선언을 하지 않아도 된다.
+// sort() 메서드는 원본을 변경하므로 굳이 변수 선언을 하지 않아도 된다
