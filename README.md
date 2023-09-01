@@ -37,7 +37,7 @@ git commit -m "[PGM] 두 수의 합 / Level 0 / 10분"
 
 <br />
 
-## BaekJoon
+## Baekjoon
 
 <br />
 
