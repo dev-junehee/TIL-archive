@@ -6,7 +6,7 @@ function solution(people, limit) {
     // 무거운 순서대로 정렬
     people.sort((a, b) => b - a);
     
-    while (i < j) {
+    while (i <= j) {
         let sum = people[i] + people[j];
         
         if (sum > limit) {
@@ -17,8 +17,6 @@ function solution(people, limit) {
             i += 1;
             j -= 1;
         }
-        
-        if (i === j) boat += 1;
     }
     
     return boat;
