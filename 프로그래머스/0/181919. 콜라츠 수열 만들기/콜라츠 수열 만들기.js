@@ -1,9 +1,9 @@
 function solution(n) {
-    var answer = [n];
+    let answer = [n];
     while (true) {
-        if (n === 1) {
-            return answer;
-        } else if (n % 2 === 0) {
+        if (n === 1) return answer;
+        
+        if (n % 2 === 0) {
             n /= 2;
             answer.push(n);
         } else {
