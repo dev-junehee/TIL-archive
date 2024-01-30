@@ -1,9 +1,12 @@
 function solution(n) {
-    let factors = [1];
+    let divisors = new Set();
     
-    for (let i = 2; i <= n; i++) {
-        if (n % i === 0) factors.push(i);
+    for (let i = 1; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) {
+            divisors.add(i);
+            divisors.add(n / i);
+        }
     }
     
-    return factors.sort((a, b) => a - b);
+    return [...divisors].sort((a, b) => a - b);
 }
