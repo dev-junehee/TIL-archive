@@ -8,23 +8,27 @@ function solution(X, Y) {
     let arrX = new Array(10).fill(0)
     let arrY = new Array(10).fill(0)
     let pair = new Array(10).fill(0)
-    
+
     // X와 Y에서 나온 숫자 개수 카운팅
-    X.split('').forEach(num => arrX[num]++)
-    Y.split('').forEach(num => arrY[num]++)
-    
+    for (const num of X.split('')) {
+        arrX[num]++
+    }
+    for (const num of Y.split('')) {
+        arrY[num]++
+    }
+
     // arrX와 arrY에서 겹치는 숫자짝꿍 수만큼 카운팅
     for (let i = 0; i < arrX.length; i++) {
         if (arrX[i] > 0 && arrY[i] > 0) {
             pair[i] += Math.min(arrX[i], arrY[i])
         }
     }
-    
+
     // 숫자짝꿍 문자열화
     for (let j = 0; j < pair.length; j++) {
         answer += String(j).repeat(pair[j])
     }
-    
+
     // 0으로만 이루어져 있을 경우
     if (Number(answer) === 0 && answer !== '') return '0'
 
