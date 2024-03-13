@@ -1,14 +1,6 @@
-function solution(A,B){
-    let answer = 0;
-    let min = 0;
-    let max = A.length - 1;
-    
+function solution(A, B) {
     A.sort((a, b) => a - b);
     B.sort((a, b) => b - a);
 
-    for (let i = 0; i < A.length; i += 1) {
-        answer += A[i] * B[i]
-    }
-
-    return answer;
+    return A.reduce((acc, cur, idx) => acc + (cur * B[idx]), 0)
 }
