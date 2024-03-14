@@ -3,9 +3,9 @@ function solution(s) {
     let zero = 0;
     
     while (s !== '1') {
-        let newS = s.replaceAll('0', '').length;
-        zero += s.length - newS;
-        s = newS.toString(2);
+        let c = s.replaceAll('0', '').length;
+        zero += s.length - c;
+        s = c.toString(2);
         convert += 1;
     }
     
