@@ -1,11 +1,14 @@
 function solution(s){
-    let pair = 0;
+    let bracket = [];
     
     for (let i = 0; i < s.length; i++) {
-        if (s[i] === "(") pair++;
-        else pair--;
-        if (pair < 0) return false;
+        if (s[i] === "(") {
+            bracket.push(s[i]);
+        } else {
+            if (bracket.length > 0) bracket.pop();
+            else return false;
+        }
     }
 
-    return pair === 0;
+    return bracket.length === 0;
 }
