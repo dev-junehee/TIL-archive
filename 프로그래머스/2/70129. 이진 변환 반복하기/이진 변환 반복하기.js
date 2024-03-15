@@ -3,7 +3,7 @@ function solution(s) {
     let zero = 0;
     
     while (s !== '1') {
-        let c = s.replaceAll('0', '').length;
+        let c = s.split('0').join('').length;
         zero += s.length - c;
         s = c.toString(2);
         convert += 1;
