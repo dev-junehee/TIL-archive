@@ -1,23 +1,23 @@
 function solution(people, limit) {
+    people.sort((a, b) => a - b);
+    
     let boat = 0;
-    let i = 0;
-    let j = people.length - 1;
     
-    // 무거운 순서대로 정렬
-    people.sort((a, b) => b - a);
+    let front = 0;
+    let back = people.length - 1;
     
-    while (i <= j) {
-        let sum = people[i] + people[j];
+    while (front <= back) {
+        let sum = people[front] + people[back];
         
-        if (sum > limit) {
+        if (sum <= limit) {
             boat += 1;
-            i += 1;
+            front++;
+            back--;
         } else {
             boat += 1;
-            i += 1;
-            j -= 1;
+            back--;
         }
     }
-    
+     
     return boat;
 }
