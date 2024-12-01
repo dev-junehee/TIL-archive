@@ -12,3 +12,19 @@ function solution(citations) {
     }
     return hIndex;
 }
+
+// citations[0] : 6
+// 6 > 0 (O)
+// h = 1
+
+// citations[1] : 5
+// 5 > 1 (O)
+// h = 2
+
+// citaitions[2] : 3
+// 3 > 2 (O)
+// h = 3
+
+// citaitons[3] : 1
+// 1 > 3 (X)
+// 여기서 끝
