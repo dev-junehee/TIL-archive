@@ -12,7 +12,8 @@ function solution(cacheSize, cities) {
         const city = cities[i];
         const idx = cache.indexOf(city); // 없으면 -1 반화
         
-        // 0 이하라는 것은 캐시에 없다는 뜻이므로 가장 오래 전에 캐싱된 제일 앞 요소를 삭제
+        // 0 이하라는 것은 캐시에 없다는 뜻
+        // 캐시가 가득차거나 초과됐을 때 가장 오래 전에 캐싱된 제일 앞 요소를 삭제
         if (idx < 0) {
             if (cache.length >= cacheSize) cache.shift();
             runtime += 5;
