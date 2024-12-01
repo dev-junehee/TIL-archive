@@ -9,15 +9,15 @@ function solution(progresses, speeds) {
     
     let deploy = []         // 각 배포마다 완성될 기능
     let count = 1           // 완성될 기능 수
-    let maxDay = tasks[0]   // 가장 많이 걸리는 날 =
+    let preTask = tasks[0]   // 가장 많이 걸리는 날 =
 
     // 남은 개발 진행도를 순회
     for (let i = 1; i < tasks.length; i++) {
         // 앞에 작업이 더 오래 걸리면 그 작업이 끝난 후 같이 배포되므로 +1
-        if (tasks[i] <= maxDay) {
+        if (tasks[i] <= preTask) {
             count++;
         } else {
-            maxDay = tasks[i]   // maxDay를 지금 순회 중인 요소로 변경
+            preTask = tasks[i]   // maxDay를 지금 순회 중인 요소로 변경
             deploy.push(count);
             count = 1;  // 배포 후에는 다시 완성될 기능을 1로 수정
         }
